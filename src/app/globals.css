@@ -2,26 +2,68 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply overflow-x-hidden bg-slate-500 uppercase text-black;
+}
+
+.upper-container {
+  @apply fixed w-full h-screen justify-center flex flex-col;
+}
+
+.upper-container span,
+.upper-container h1 {
+  @apply py-[10px] px-[50px];
+}
+
+.upper-container span {
+  @apply text-base md:text-xl;
+}
+
+.upper-container h1 {
+  @apply text-3xl md:text-7xl leading-none;
+}
+
+.imageBoard {
+  @apply relative flex items-center justify-center h-screen w-full overflow-hidden;
+}
+
+.imageBoard .cardImage {
+  @apply opacity-0 h-[50vh];
+}
+
+.scalableImg {
+  @apply absolute w-[250px];
+}
+
+#scalableImg1 {
+  @apply w-1/4 sm:w-1/5 top-[9%] left-[1%] md:top-[10%] md:left-[9%];
+}
+#scalableImg2 {
+  @apply w-1/4 sm:w-1/5 top-[40%] left-[1%] md:top-[35%] md:left-[35%];
+}
+#scalableImg3 {
+  @apply w-1/4 sm:w-1/5 top-[60%] left-[25%] md:top-[40%] md:left-[15%];
+}
+#scalableImg4 {
+  @apply w-1/4 sm:w-1/5 top-[50%] left-[65%] md:top-[60%] md:left-[70%];
+}
+#scalableImg5 {
+  @apply w-1/4 sm:w-1/5 top-[15%] left-[55%] md:top-[10%] md:left-[55%];
+}
+
+.cardImage {
+  @apply fixed w-full h-screen flex justify-center items-center text-black font-bold;
+}
+
+.scroll-helper {
+  @apply border-2 relative bottom-[500px];
 }
